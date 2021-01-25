@@ -1,8 +1,9 @@
 {
-  "name": "element-ui",
+  "name": "dragonfly-element-ui",
   "version": "2.6.1",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
+  "author": "chancy <1163260351@qq.com>",
   "files": [
     "lib",
     "src",

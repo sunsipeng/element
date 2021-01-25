@@ -1,3 +1,14 @@
+## 蜻蜓AI element-ui 改造版本
+
+## 该版本基于element-ui 2.6.1 版本进行修改
+
+## 改造内容如下
+
+#### 1. 添加ssr-table 组件 用于解决table组件ssr期间无法正常渲染问题
+#### 2. cascader 组件更新至2.9.0 <a href="https://github.com/ElemeFE/element/pull/15611">#15611</a>
+
+
+
 <p align="center">
   <img src="https://cdn.rawgit.com/ElemeFE/element/dev/element_logo.svg">
 </p>
