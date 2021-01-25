@@ -1,117 +1,3 @@
-<script>
-  module.exports = {
-    data() {
-      return {
-        pickerOptions1: {
-          disabledDate(time) {
-            return time.getTime() > Date.now();
-          },
-          shortcuts: [{
-            text: '今天',
-            onClick(picker) {
-              picker.$emit('pick', new Date());
-            }
-          }, {
-            text: '昨天',
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24);
-              picker.$emit('pick', date);
-            }
-          }, {
-            text: '一周前',
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', date);
-            }
-          }]
-        },
-        pickerOptions2: {
-          shortcuts: [{
-            text: '最近一周',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', [start, end]);
-            }
-          }, {
-            text: '最近一个月',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-              picker.$emit('pick', [start, end]);
-            }
-          }, {
-            text: '最近三个月',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit('pick', [start, end]);
-            }
-          }]
-        },
-        value1: '',
-        value2: '',
-        value3: '',
-        value4: '',
-        value5: '',
-        value6: '',
-        value7: '',
-        value8: '',
-        value9: '',
-        value10: '',
-        value11: '',
-        value12: '',
-        value13: '',
-        value14: ''
-      };
-    }
-  };
-</script>
-
-<style>
-  .demo-block.demo-date-picker .source {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .demo-date-picker .block {
-    padding: 30px 0;
-    text-align: center;
-    border-right: solid 1px #EFF2F6;
-    flex: 1;
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .demo-date-picker .container {
-    flex: 1;
-    border-right: solid 1px #EFF2F6;
-    .block {
-      border-right: none;
-      &:last-child {
-        border-top: solid 1px #EFF2F6;
-      }
-    }
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .demo-date-picker .demonstration {
-    display: block;
-    color: #8492a6;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-</style>
-
 ## DatePicker 日期选择器
 
 用于选择或输入日期
@@ -240,7 +126,7 @@
 ```
 :::
 
-###  选择日期范围
+### 选择日期范围
 
 可在一个选择器中便捷地选择一个时间范围
 
@@ -249,7 +135,6 @@
 <template>
   <div class="block">
     <span class="demonstration">默认</span>
-    {{value6}}
     <el-date-picker
       v-model="value6"
       type="daterange"
@@ -429,6 +314,7 @@
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
+| value / v-model | 绑定值 | date(DatePicker) / array(DateRangePicker) | — | — |
 | readonly | 完全只读 | boolean | — | false |
 | disabled | 禁用 | boolean | — | false |
 | editable | 文本框可输入 | boolean | — | true |
@@ -450,6 +336,7 @@
 | unlink-panels | 在范围选择器里取消两个日期面板之间的联动 | boolean | — | false |
 | prefix-icon | 自定义头部图标的类名 | string | — | el-icon-date |
 | clear-icon | 自定义清空图标的类名 | string | — | el-icon-circle-close |
+| validate-event | 输入时是否触发表单的校验 | boolean | - | true |
 
 ### Picker Options
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |

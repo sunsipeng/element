@@ -26,6 +26,8 @@ import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
 import Table from '../packages/table/index.js';
 import TableColumn from '../packages/table-column/index.js';
+import SsrTable from '../packages/ssr-table/index.js';
+import SsrTableColumn from '../packages/ssr-table-column/index.js';
 import DatePicker from '../packages/date-picker/index.js';
 import TimeSelect from '../packages/time-select/index.js';
 import TimePicker from '../packages/time-picker/index.js';
@@ -69,6 +71,9 @@ import Header from '../packages/header/index.js';
 import Aside from '../packages/aside/index.js';
 import Main from '../packages/main/index.js';
 import Footer from '../packages/footer/index.js';
+import Timeline from '../packages/timeline/index.js';
+import TimelineItem from '../packages/timeline-item/index.js';
+import CascaderPanel from '../packages/cascader-panel/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -99,6 +104,8 @@ const components = [
   ButtonGroup,
   Table,
   TableColumn,
+  SsrTable,
+  SsrTableColumn,
   DatePicker,
   TimeSelect,
   TimePicker,
@@ -138,6 +145,9 @@ const components = [
   Aside,
   Main,
   Footer,
+  Timeline,
+  TimelineItem,
+  CascaderPanel,
   CollapseTransition
 ];
 
@@ -171,8 +181,8 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-module.exports = {
-  version: '2.4.8',
+export default {
+  version: '2.6.1',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -204,6 +214,8 @@ module.exports = {
   ButtonGroup,
   Table,
   TableColumn,
+  SsrTable,
+  SsrTableColumn,
   DatePicker,
   TimeSelect,
   TimePicker,
@@ -245,7 +257,8 @@ module.exports = {
   Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  Timeline,
+  TimelineItem,
+  CascaderPanel
 };
-
-module.exports.default = module.exports;

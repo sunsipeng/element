@@ -1,386 +1,3 @@
-<script>
-  export default {
-    data() {
-      return {
-        tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333,
-          tag: '家'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333,
-          tag: '公司'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333,
-          tag: '家'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333,
-          tag: '公司'
-        }],
-        tableData2: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          $info: true
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          $positive: true
-        }],
-        tableData3: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          detailAddress: '金沙江路 1518 弄',
-          zip: 200333
-        }],
-        tableData4: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }],
-        tableData5: [{
-          id: '12987122',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987123',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987125',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987126',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }],
-        tableData6: [{
-          id: '12987122',
-          name: '王小虎',
-          amount1: '234',
-          amount2: '3.2',
-          amount3: 10
-        }, {
-          id: '12987123',
-          name: '王小虎',
-          amount1: '165',
-          amount2: '4.43',
-          amount3: 12
-        }, {
-          id: '12987124',
-          name: '王小虎',
-          amount1: '324',
-          amount2: '1.9',
-          amount3: 9
-        }, {
-          id: '12987125',
-          name: '王小虎',
-          amount1: '621',
-          amount2: '2.2',
-          amount3: 17
-        }, {
-          id: '12987126',
-          name: '王小虎',
-          amount1: '539',
-          amount2: '4.1',
-          amount3: 15
-        }],
-        currentRow: null,
-        multipleSelection: []
-      };
-    },
-
-    methods: {
-      getSummaries(param) {
-        const { columns, data } = param;
-        const sums = [];
-        columns.forEach((column, index) => {
-          if (index === 0) {
-            sums[index] = '总价';
-            return;
-          }
-          const values = data.map(item => Number(item[column.property]));
-          if (!values.every(value => isNaN(value))) {
-            sums[index] = values.reduce((prev, curr) => {
-              const value = Number(curr);
-              if (!isNaN(value)) {
-                return prev + curr;
-              } else {
-                return prev;
-              }
-            }, 0);
-            sums[index] += ' 元';
-          } else {
-            sums[index] = 'N/A';
-          }
-        });
-
-        return sums;
-      },
-      setCurrent(row) {
-        this.$refs.singleTable.setCurrentRow(row);
-      },
-      toggleSelection(rows) {
-        if (rows) {
-          rows.forEach(row => {
-            this.$refs.multipleTable.toggleRowSelection(row);
-          });
-        } else {
-          this.$refs.multipleTable.clearSelection();
-        }
-      },
-
-      handleClick(row) {
-        console.log(row);
-      },
-
-      handleEdit(index, row) {
-        console.log(index, row);
-      },
-
-      handleDelete(index, row) {
-        console.log(index, row);
-      },
-
-      handleSelectionChange(val) {
-        this.multipleSelection = val;
-      },
-
-      handleCurrentChange(val) {
-        this.currentRow = val;
-      },
-
-      formatter(row, column) {
-        return row.address;
-      },
-
-      filterTag(value, row) {
-        return row.tag === value;
-      },
-
-      filterHandler(value, row, column) {
-        const property = column['property'];
-        return row[property] === value;
-      },
-
-      tableRowClassName({row, rowIndex}) {
-        if (rowIndex === 1) {
-          return 'warning-row';
-        } else if (rowIndex === 3) {
-          return 'success-row';
-        }
-        return '';
-      },
-
-      deleteRow(index, rows) {
-        rows.splice(index, 1);
-      },
-
-      arraySpanMethod({ row, column, rowIndex, columnIndex }) {
-        if (rowIndex % 2 === 0) {
-          if (columnIndex === 0) {
-            return [1, 2];
-          } else if (columnIndex === 1) {
-            return [0, 0];
-          }
-        }
-      },
-
-      objectSpanMethod({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex === 0) {
-          if (rowIndex % 2 === 0) {
-            return {
-              rowspan: 2,
-              colspan: 1
-            };
-          } else {
-            return {
-              rowspan: 0,
-              colspan: 0
-            };
-          }
-        }
-      },
-
-      indexMethod(index) {
-        return index * 2;
-      }
-    },
-
-    watch: {
-      multipleSelection(val) {
-        console.log('selection: ', val);
-      }
-    }
-  };
-</script>
-
-<style>
-  .el-table .warning-row {
-    background: oldlace;
-  }
-
-  .el-table .success-row {
-    background: #f0f9eb;
-  }
-
-  .demo-table .name-wrapper {
-    display: inline-block;
-  }
-
-  .demo-table .demo-table-expand {
-    label {
-      width: 90px;
-      color: #99a9bf;
-    }
-    .el-form-item {
-      margin-right: 0;
-      margin-bottom: 0;
-      width: 50%;
-    }
-  }
-</style>
-
 ## Table 表格
 
 用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。
@@ -392,24 +9,24 @@
 :::demo 当`el-table`元素中注入`data`对象数组后，在`el-table-column`中用`prop`属性来对应对象中的键名即可填入数据，用`label`属性来定义表格的列名。可以使用`width`属性来定义列宽。
 ```html
   <template>
-    <el-table
+    <el-ssr-table
       :data="tableData"
       style="width: 100%">
-      <el-table-column
+      <el-ssr-table-column
         prop="date"
         label="日期"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </el-ssr-table-column>
+      <el-ssr-table-column
         prop="name"
         label="姓名"
         width="180">
-      </el-table-column>
-      <el-table-column
+      </el-ssr-table-column>
+      <el-ssr-table-column
         prop="address"
         label="地址">
-      </el-table-column>
-    </el-table>
+      </el-ssr-table-column>
+    </el-ssr-table>
   </template>
 
   <script>
@@ -760,13 +377,6 @@
     data() {
       return {
         tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
           date: '2016-05-02',
           name: '王小虎',
           province: '上海',
@@ -778,14 +388,21 @@
           name: '王小虎',
           province: '上海',
           city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
+          address: '上海市普陀区金沙江路 1517 弄',
           zip: 200333
         }, {
           date: '2016-05-01',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
+          address: '上海市普陀区金沙江路 1519 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1516 弄',
           zip: 200333
         }]
       }
@@ -1376,7 +993,10 @@
 :::demo 在列中设置`filters` `filter-method`属性即可开启该列的筛选，filters 是一个数组，`filter-method`是一个方法，它用于决定某些数据是否显示，会传入三个参数：`value`, `row` 和 `column`。
 ```html
 <template>
+  <el-button @click="resetDateFilter">清除日期过滤器</el-button>
+  <el-button @click="clearFilter">清除所有过滤器</el-button>
   <el-table
+    ref="filterTable"
     :data="tableData"
     style="width: 100%">
     <el-table-column
@@ -1384,6 +1004,7 @@
       label="日期"
       sortable
       width="180"
+      column-key="date"
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"
     >
@@ -1442,6 +1063,12 @@
       }
     },
     methods: {
+      resetDateFilter() {
+        this.$refs.filterTable.clearFilter('date');
+      },
+      clearFilter() {
+        this.$refs.filterTable.clearFilter();
+      },
       formatter(row, column) {
         return row.address;
       },
@@ -1643,6 +1270,82 @@
         }]
       }
     }
+  }
+</script>
+```
+:::
+
+### 自定义表头
+
+表头支持自定义。
+
+:::demo 通过设置 [Scoped slot](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD) 来自定义表头。
+```html
+<template>
+  <el-table
+    :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+    style="width: 100%">
+    <el-table-column
+      label="Date"
+      prop="date">
+    </el-table-column>
+    <el-table-column
+      label="Name"
+      prop="name">
+    </el-table-column>
+    <el-table-column
+      align="right">
+      <template slot="header" slot-scope="scope">
+        <el-input
+          v-model="search"
+          size="mini"
+          placeholder="输入关键字搜索"/>
+      </template>
+      <template slot-scope="scope">
+        <el-button
+          size="mini"
+          @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+        <el-button
+          size="mini"
+          type="danger"
+          @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }],
+        search: ''
+      }
+    },
+    methods: {
+      handleEdit(index, row) {
+        console.log(index, row);
+      },
+      handleDelete(index, row) {
+        console.log(index, row);
+      }
+    },
   }
 </script>
 ```
@@ -1960,35 +1663,35 @@
     data() {
       return {
         tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333,
-          tag: '家'
-        }, {
           date: '2016-05-02',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333,
-          tag: '公司'
+          tag: '家'
         }, {
           date: '2016-05-04',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
+          address: '上海市普陀区金沙江路 1517 弄',
           zip: 200333,
-          tag: '家'
+          tag: '公司'
         }, {
           date: '2016-05-01',
           name: '王小虎',
           province: '上海',
           city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
+          address: '上海市普陀区金沙江路 1519 弄',
+          zip: 200333,
+          tag: '家'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1516 弄',
           zip: 200333,
           tag: '公司'
         }],
@@ -2047,9 +1750,9 @@
 | cell-mouse-leave | 当单元格 hover 退出时会触发该事件 | row, column, cell, event |
 | cell-click | 当某个单元格被点击时会触发该事件 | row, column, cell, event |
 | cell-dblclick | 当某个单元格被双击击时会触发该事件 | row, column, cell, event |
-| row-click | 当某一行被点击时会触发该事件 | row, event, column |
-| row-contextmenu | 当某一行被鼠标右键点击时会触发该事件 | row, event |
-| row-dblclick | 当某一行被双击时会触发该事件 | row, event |
+| row-click | 当某一行被点击时会触发该事件 | row, column, event |
+| row-contextmenu | 当某一行被鼠标右键点击时会触发该事件 | row, column, event |
+| row-dblclick | 当某一行被双击时会触发该事件 | row, column, event |
 | header-click | 当某一列的表头被点击时会触发该事件 | column, event |
 | header-contextmenu | 当某一列的表头被鼠标右键点击时触发该事件 | column, event |
 | sort-change | 当表格的排序条件发生变化的时候会触发该事件 | { column, prop, order } |
@@ -2067,7 +1770,7 @@
 | toggleRowExpansion | 用于可展开表格，切换某一行的展开状态，如果使用了第二个参数，则是设置这一行展开与否（expanded 为 true 则展开） | row, expanded |
 | setCurrentRow | 用于单选表格，设定某一行为选中行，如果调用时不加参数，则会取消目前高亮行的选中状态。 | row |
 | clearSort | 用于清空排序条件，数据会恢复成未排序的状态 | — |
-| clearFilter | 用于清空过滤条件，数据会恢复成未过滤的状态 | — |
+| clearFilter | 不传入参数时用于清空所有过滤条件，数据会恢复成未过滤的状态，也可传入由columnKey组成的数组以清除指定列的过滤条件 | columnKey |
 | doLayout | 对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法 | — |
 | sort | 手动对 Table 进行排序。参数`prop`属性指定排序列，`order`指定排序顺序。 | prop: string, order: string |
 
@@ -2080,7 +1783,7 @@
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | type | 对应列的类型。如果设置了 `selection` 则显示多选框；如果设置了 `index` 则显示该行的索引（从 1 开始计算）；如果设置了 `expand` 则显示为一个可展开的按钮 | string | selection/index/expand | — |
-| index | 如果设置了 `type=index`，可以通过传递 `index` 属性来自定义索引 | string, Function(index) | - | - |
+| index | 如果设置了 `type=index`，可以通过传递 `index` 属性来自定义索引 | number, Function(index) | - | - |
 | column-key | column 的 key，如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件 | string | — | — |
 | label | 显示的标题 | string | — | — |
 | prop | 对应列内容的字段名，也可以使用 property 属性 | string | — | — |
@@ -2111,3 +1814,4 @@
 | name | 说明 |
 |------|--------|
 | — | 自定义列的内容，参数为 { row, column, $index } |
+| header | 自定义表头的内容. 参数为 { column, $index } |

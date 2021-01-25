@@ -10,13 +10,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    line-height: @height;
+    line-height: 80px;
     z-index: 100;
     position: relative;
 
     .container {
       height: 100%;
       box-sizing: border-box;
+      border-bottom: 1px solid #DCDFE6;
     }
 
     .nav-lang-spe {
@@ -54,9 +55,15 @@
       height: 100%;
       line-height: 80px;
       background: transparent;
-      @utils-clearfix;
       padding: 0;
       margin: 0;
+      &::before, &::after {
+        display: table;
+        content: "";
+      }
+      &::after {
+        clear: both;
+      }
     }
 
     .nav-gap {
@@ -122,23 +129,24 @@
 
       a {
         text-decoration: none;
-        color: #888;
+        color: #1989FA;
+        opacity: 0.5;
         display: block;
         padding: 0 22px;
 
         &.active,
         &:hover {
-          color: #333;
+          opacity: 1;
         }
 
         &.active::after {
           content: '';
           display: inline-block;
           position: absolute;
-          bottom: 15px;
-          left: calc(50% - 7px);
-          width: 14px;
-          height: 4px;
+          bottom: 0;
+          left: calc(50% - 15px);
+          width: 30px;
+          height: 2px;
           background: #409EFF;
         }
       }
@@ -356,7 +364,8 @@
           
           <!--theme picker-->
           <li class="nav-item nav-theme-switch" v-show="isComponentPage">
-            <theme-picker></theme-picker>
+            <theme-configurator :key="lang" v-if="showThemeConfigurator"></theme-configurator>
+            <theme-picker v-else></theme-picker>
           </li>
         </ul>
       </div>
@@ -365,9 +374,13 @@
 </template>
 <script>
   import ThemePicker from './theme-picker.vue';
+  import ThemeConfigurator from './theme-configurator';
   import AlgoliaSearch from './search.vue';
   import compoLang from '../i18n/component.json';
-  import { version } from 'main/index.js';
+  import Element from 'main/index.js';
+  import bus from '../bus';
+
+  const { version } = Element;
 
   export default {
     data() {
@@ -380,13 +393,15 @@
         langs: {
           'zh-CN': '中文',
           'en-US': 'English',
-          'es': 'Español'
+          'es': 'Español',
+          'fr-FR': 'Français'
         }
       };
     },
 
     components: {
       ThemePicker,
+      ThemeConfigurator,
       AlgoliaSearch
     },
 
@@ -402,6 +417,10 @@
       },
       isComponentPage() {
         return /^component/.test(this.$route.name);
+      },
+      showThemeConfigurator() {
+        const host = location.hostname;
+        return host.match('localhost') || host.match('elenet');
       }
     },
 
@@ -439,6 +458,17 @@
       };
       xhr.open('GET', '/versions.json');
       xhr.send();
+      let primaryLast = '#409EFF';
+      bus.$on('user-theme-config-update', (val) => {
+        let primaryColor = val.global['$--color-primary'];
+        if (!primaryColor) primaryColor = '#409EFF';
+        const base64svg = 'data:image/svg+xml;base64,';
+        const imgSet = document.querySelectorAll('h1 img');
+        imgSet.forEach((img) => {
+          img.src = `${base64svg}${window.btoa(window.atob(img.src.replace(base64svg, '')).replace(primaryLast, primaryColor))}`;
+        });
+        primaryLast = primaryColor;
+      });
     }
   };
 </script>

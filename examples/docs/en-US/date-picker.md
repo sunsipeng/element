@@ -1,116 +1,3 @@
-<script>
-  module.exports = {
-    data() {
-      return {
-        pickerOptions1: {
-          disabledDate(time) {
-            return time.getTime() > Date.now();
-          },
-          shortcuts: [{
-            text: 'Today',
-            onClick(picker) {
-              picker.$emit('pick', new Date());
-            }
-          }, {
-            text: 'Yesterday',
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24);
-              picker.$emit('pick', date);
-            }
-          }, {
-            text: 'A week ago',
-            onClick(picker) {
-              const date = new Date();
-              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', date);
-            }
-          }]
-        },
-        pickerOptions2: {
-          shortcuts: [{
-            text: 'Last week',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', [start, end]);
-            }
-          }, {
-            text: 'Last month',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-              picker.$emit('pick', [start, end]);
-            }
-          }, {
-            text: 'Last 3 months',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit('pick', [start, end]);
-            }
-          }]
-        },
-        value1: '',
-        value2: '',
-        value3: '',
-        value4: '',
-        value5: '',
-        value6: '',
-        value7: '',
-        value8: '',
-        value9: '',
-        value10: '',
-        value11: '',
-        value12: '',
-        value13: '',
-        value14: ''
-      };
-    }
-  };
-</script>
-
-<style>
-  .demo-block.demo-date-picker .source {
-    padding: 0;
-    display: flex;
-  }
-
-  .demo-date-picker .block {
-    padding: 30px 0;
-    text-align: center;
-    border-right: solid 1px #EFF2F6;
-    flex: 1;
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .demo-date-picker .container {
-    flex: 1;
-    border-right: solid 1px #EFF2F6;
-    .block {
-      border-right: none;
-      &:last-child {
-        border-top: solid 1px #EFF2F6;
-      }
-    }
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .demo-date-picker .demonstration {
-    display: block;
-    color: #8492a6;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-</style>
-
 ## DatePicker
 
 Use Date Picker for date input.
@@ -373,6 +260,8 @@ Pay attention to capitalization
 | `yyyy` | year | | 2017 |
 | `M`  | month | no leading 0 | 1 |
 | `MM` | month | | 01 |
+| `MMM` | month | | Jan |
+| `MMMM` | month | | January |
 | `W`  | week | only for week picker's `format`; no leading 0 | 1 |
 | `WW` | week | only for week picker's `format`| 01 |
 | `d`  | day | no leading 0 | 2 |
@@ -474,11 +363,12 @@ When picking a date range, you can assign the time part for start date and end d
 ### Attributes
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
+| value / v-model | binding value | date(DatePicker) / array(DateRangePicker) | — | — |
 | readonly | whether DatePicker is read only | boolean | — | false |
 | disabled | whether DatePicker is disabled | boolean | — | false |
 | size | size of Input | string | large/small/mini | — |
 | editable | whether the input is editable | boolean | — | true |
-| clearable | Whether to show clear button | boolean | — | true |
+| clearable | whether to show clear button | boolean | — | true |
 | placeholder | placeholder in non-range mode | string | — | — |
 | start-placeholder | placeholder for the start date in range mode | string | — | — |
 | end-placeholder | placeholder for the end date in range mode | string | — | — |
@@ -495,6 +385,7 @@ When picking a date range, you can assign the time part for start date and end d
 | unlink-panels | unlink two date-panels in range-picker | boolean | — | false |
 | prefix-icon | Custom prefix icon class | string | — | el-icon-date |
 | clear-icon | Custom clear icon class | string | — | el-icon-circle-close |
+| validate-event | whether to trigger form validation | boolean | - | true |
 
 ### Picker Options
 | Attribute      | Description          | Type      | Accepted Values       | Default  |
@@ -522,3 +413,8 @@ When picking a date range, you can assign the time part for start date and end d
 | Method | Description | Parameters |
 |------|--------|-------|
 | focus | focus the Input component | — |
+
+### Slots
+| Name    | Description |
+|---------|-------------|
+| range-separator  | custom range separator content |
